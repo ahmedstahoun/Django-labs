@@ -1,0 +1,48 @@
+{% extends 'main/base_layout.html' %} {# override block title #} {% block
+title%} Create Book {% endblock %} {# override body #} {% block main-content%}
+
+<div class="w-100 d-flex justify-content-center align-items-center">
+  <form method="post" action="{% url 'book:book-add'%}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputid1" class="form-label">ID</label>
+      <input
+        name="id"
+        type="text"
+        class="form-control"
+        id="exampleInputid1"
+        aria-describedby="idHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputname1" class="form-label">Name</label>
+      <input
+        name="name"
+        type="text"
+        class="form-control"
+        id="exampleInputname1"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputname1" class="form-label">Author</label>
+      <input
+        name="author"
+        type="text"
+        class="form-control"
+        id="exampleInputname1"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputname1" class="form-label">Description</label>
+      <input
+        name="description"
+        type="text"
+        class="form-control"
+        id="exampleInputname1"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">ADD</button>
+  </form>
+</div>
+{% endblock %}
